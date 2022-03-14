@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "detail_profiles",
+  "info": {
+    "singularName": "detail-profile",
+    "pluralName": "detail-profiles",
+    "displayName": "detail-profile"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nomor_telp": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

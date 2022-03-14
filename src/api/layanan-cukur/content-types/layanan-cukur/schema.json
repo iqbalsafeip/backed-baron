@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "layanan_cukurs",
+  "info": {
+    "singularName": "layanan-cukur",
+    "pluralName": "layanan-cukurs",
+    "displayName": "layanan cukur"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "layanan": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::layanan.layanan",
+      "inversedBy": "layanan_cukurs"
+    },
+    "tukang_cukur": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tukang-cukur.tukang-cukur",
+      "inversedBy": "layanan_cukurs"
+    },
+    "bookings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::booking.booking",
+      "mappedBy": "layanan_cukur"
+    }
+  }
+}

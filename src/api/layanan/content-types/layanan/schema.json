@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "layanans",
+  "info": {
+    "singularName": "layanan",
+    "pluralName": "layanans",
+    "displayName": "layanan"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "harga": {
+      "type": "string"
+    },
+    "layanan_cukurs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::layanan-cukur.layanan-cukur",
+      "mappedBy": "layanan"
+    }
+  }
+}

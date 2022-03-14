@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tukang_cukurs",
+  "info": {
+    "singularName": "tukang-cukur",
+    "pluralName": "tukang-cukurs",
+    "displayName": "tukang-cukur"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama": {
+      "type": "string"
+    },
+    "user_cukur": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "tukang_cukur"
+    },
+    "profile": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "layanan_cukurs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::layanan-cukur.layanan-cukur",
+      "mappedBy": "tukang_cukur"
+    },
+    "bookings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::booking.booking",
+      "mappedBy": "tukang_cukur"
+    }
+  }
+}

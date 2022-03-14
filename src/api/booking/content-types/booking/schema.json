@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "singularName": "booking",
+    "pluralName": "bookings",
+    "displayName": "booking"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "alamat_lengkap": {
+      "type": "text"
+    },
+    "pelanggan": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "bookings"
+    },
+    "tukang_cukur": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tukang-cukur.tukang-cukur",
+      "inversedBy": "bookings"
+    },
+    "tanggal_booking": {
+      "type": "date"
+    },
+    "jam_booking": {
+      "type": "time"
+    },
+    "layanan_cukur": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::layanan-cukur.layanan-cukur",
+      "inversedBy": "bookings"
+    },
+    "ongkos_transportasi": {
+      "type": "string"
+    },
+    "total_bayar": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    }
+  }
+}
